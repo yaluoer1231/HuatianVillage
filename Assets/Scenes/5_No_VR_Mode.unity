@@ -10885,8 +10885,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixed_X_Rotate_point: {fileID: 1531670489}
-  text: {fileID: 657394563}
-  Cam_rotate_speed: 2
+  rotateSpeed: 0.2
+  minVertical: -80
+  maxVertical: 80
 --- !u!224 &1153399652 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6041581372581279173, guid: c3753b6e5b575b740bba5b2ad82c295b,

@@ -18,7 +18,7 @@ public class ScreenTouch : MonoBehaviour
     void Update()
     {
         //旋轉身體的視角
-        if (Input.GetMouseButton((int)Mouse_Button.Mouse_Left))
+        /*if (Input.GetMouseButton((int)Mouse_Button.Mouse_Left))
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -28,6 +28,6 @@ public class ScreenTouch : MonoBehaviour
              
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
-        }
+        }*/
     }
 }

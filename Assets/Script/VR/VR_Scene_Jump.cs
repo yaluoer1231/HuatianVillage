@@ -30,7 +30,7 @@ public class VR_Scene_Jump : MonoBehaviour
         //確認當下場景編號
         scene_num = (Scene_Num)SceneManager.GetActiveScene().buildIndex;
         //儲存選擇的景點名稱
-        string SelectViewPoint = Map_Select.map_select != null? Map_Select.map_select.VRScene_Name: GuideMap_Name.Home.ToString();
+        string SelectViewPoint = Map_Select.map_select.VRScene_Name;
 
         if (Enum.IsDefined(typeof(GuideMap_Name), SelectViewPoint))
         {
