@@ -13,6 +13,8 @@ public class Cam_Control : MonoBehaviour
 {
     public Transform fixed_X_Rotate_point;  // 利用此點做拖拉平移 (旋轉點)
 
+    public bool IsStop = false;
+
     public float rotateSpeed = 0.2f;
 
     public float minVertical = -80f;
@@ -26,6 +28,8 @@ public class Cam_Control : MonoBehaviour
 
     void Start()
     {
+        IsStop = false;
+
         Vector3 angle = transform.eulerAngles;
 
         rotationX = angle.x;
@@ -43,6 +47,8 @@ public class Cam_Control : MonoBehaviour
 
     void Update()
     {
+        if (IsStop) return;
+
         // =========================
         // PC 滑鼠
         // =========================

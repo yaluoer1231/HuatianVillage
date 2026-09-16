@@ -8,11 +8,13 @@ using UnityEngine.SceneManagement;
 public enum Scene_Num
 {
     Home = 0,
-    ControlsGuide = 1,
-    WanglongPond = 2,
-    MapGuide = 3,
-    VR_Mode = 4,
-    No_VR_Mode = 5
+    WanglongPond = 1,
+    ControlsGuide = 2,
+    Traffic_Information = 3,
+    MapGuide = 4,
+    VR_Mode = 5,
+    Touch_Mode = 6,
+    Auto_Mode = 7,
 }
 
 public class Scenes_Switch : MonoBehaviour
@@ -26,24 +28,36 @@ public class Scenes_Switch : MonoBehaviour
         switch (scene_num)
         {
             case Scene_Num.VR_Mode:
-            case Scene_Num.No_VR_Mode:
+            case Scene_Num.Touch_Mode:
+            case Scene_Num.Auto_Mode:
                 Screen.orientation = ScreenOrientation.Landscape;
+
+                Screen.autorotateToPortrait = false;
+                Screen.autorotateToPortraitUpsideDown = false;
+                Screen.autorotateToLandscapeLeft = true;
                 Screen.autorotateToLandscapeRight = true;
+
                 break;
 
             case Scene_Num.ControlsGuide:
             case Scene_Num.WanglongPond:
             case Scene_Num.MapGuide:
             case Scene_Num.Home:
+                XRSettings.enabled = false;
                 Screen.orientation = ScreenOrientation.Portrait;
+
+                Screen.autorotateToPortrait = true;
+                Screen.autorotateToPortraitUpsideDown = true;
+                Screen.autorotateToLandscapeLeft = false;
+                Screen.autorotateToLandscapeRight = false;
+
                 break;
 
             default: break;
         }
-        if (scene_num == Scene_Num.VR_Mode)
+
+        if (scene_num == Scene_Num.VR_Mode || scene_num == Scene_Num.Auto_Mode)
             XRSettings.enabled = true;
-        else
-            XRSettings.enabled = false;
     }
 
     void Update()
@@ -68,11 +82,15 @@ public class Scenes_Switch : MonoBehaviour
         {
             switch (scene_num)
             {
-                case Scene_Num.VR_Mode: case Scene_Num.No_VR_Mode: 
+                case Scene_Num.VR_Mode:
+                case Scene_Num.Auto_Mode:
+                case Scene_Num.Touch_Mode:
                     SceneManager.LoadSceneAsync((int)Scene_Num.MapGuide);
                     break;
 
-                case Scene_Num.ControlsGuide: case Scene_Num.WanglongPond: case Scene_Num.MapGuide:
+                case Scene_Num.ControlsGuide:
+                case Scene_Num.WanglongPond:
+                case Scene_Num.MapGuide:
                     SceneManager.LoadSceneAsync((int)Scene_Num.Home);
                     break;
 

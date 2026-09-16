@@ -9,18 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/0_Home.unity
     guid: 2889518eebbdcf74ea57c30350b45285
   - enabled: 1
-    path: Assets/Scenes/1_ControlsGuide.unity
-    guid: 321ce6dc23c7787468ec9337db533b75
-  - enabled: 1
-    path: Assets/Scenes/2_WanglongPond.unity
+    path: Assets/Scenes/1_WanglongPond.unity
     guid: 3f2625ba8f8a1324b979911ec51b827f
   - enabled: 1
-    path: Assets/Scenes/3_MapGuide.unity
+    path: Assets/Scenes/2_ControlsGuide.unity
+    guid: 321ce6dc23c7787468ec9337db533b75
+  - enabled: 1
+    path: Assets/Scenes/3_Traffic_Information.unity
+    guid: 78ea09d18b80ffe4bb57d77a0a52cfb0
+  - enabled: 1
+    path: Assets/Scenes/4_MapGuide.unity
     guid: 720a75562e55c9c48b09b23de4587990
   - enabled: 1
-    path: Assets/Scenes/4_VR_Mode.unity
+    path: Assets/Scenes/5_VR_Mode.unity
     guid: 85760eda77b42ce48a348ee656aab838
   - enabled: 1
-    path: Assets/Scenes/5_No_VR_Mode.unity
+    path: Assets/Scenes/6_Touch_Mode.unity
     guid: 5fa6aa86dc74fb24fa74d123e8a2a07a
+  - enabled: 1
+    path: Assets/Scenes/7_Auto_Mode.unity
+    guid: 68f65f4aa59931d49b4a5c825884ea87
   m_configObjects: {}
